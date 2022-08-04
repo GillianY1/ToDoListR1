@@ -1,16 +1,35 @@
+import styled from "styled-components";
 import Filter from './Filter';
 import TaskItem from './TaskItem';
 
 function TaskList(){
     return(
-        <div>
-            <Filter></Filter>
-            <div>
+        <Wrapper>
+            <Filter/>
+            <TaskItemContainer>
                 <TaskItem />
                 <TaskItem />
-            </div>
-        </div>
+            </TaskItemContainer>
+        </Wrapper>
     );
 }
+
+
+const Wrapper = styled.div`
+  margin: 0 auto;
+  width: 80%;
+  max-width: 600px;
+  min-width: 300px;
+`;
+
+const TaskItemContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 30px 0;
+  background-color: #f8f8f8;
+`;
+
 
 export default TaskList
